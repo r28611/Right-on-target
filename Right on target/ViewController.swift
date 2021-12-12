@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupUi()
         game = Game(startValue: 1, endValue: 50, rounds: 5)
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue!))
     }
     
     fileprivate func setupUi() {
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
         } else {
             game.startNewRound()
         }
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue!))
     }
     
     @objc private func showAboutScreen() {

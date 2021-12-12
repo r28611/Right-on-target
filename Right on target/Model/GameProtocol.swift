@@ -9,9 +9,9 @@ import Foundation
 
 protocol GameProtocol {
     var score: Int { get }
-    var currentSecretValue: Int { get }
+    var secretValueGenerator: GeneratorProtocol { get }
+    var currentRound: GameRoundProtocol! { get }
     var isGameEnded: Bool { get }
     func restartGame()
     func startNewRound()
-    func calculateScore(with value: Int)
 }
