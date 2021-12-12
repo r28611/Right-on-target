@@ -120,6 +120,7 @@ class ViewController: UIViewController {
             self.round += 1
         }
         self.number = Int.random(in: 1...50)
+        self.label.text = String(self.number)
     }
     
     @objc private func showAboutScreen() {
