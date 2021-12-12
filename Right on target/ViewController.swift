@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     var round: Int = 1
     var points: Int = 0
     
+    private lazy var secondViewController: UIViewController = {
+        return AboutViewController()
+    }()
+    
     private lazy var label: UILabel = {
         let label = UILabel()
         label.text = "0"
@@ -27,9 +31,9 @@ class ViewController: UIViewController {
         slider.minimumValueImage = .init(systemName: "01.square.fill")
         slider.maximumValueImage = .init(systemName: "50.square.fill")
         slider.tintColor = .systemPurple
-        slider.value = 25
         slider.minimumValue = 1
         slider.maximumValue = 50
+        slider.value = 25
         slider.translatesAutoresizingMaskIntoConstraints = false
         return slider
     }()
@@ -119,8 +123,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func showAboutScreen() {
-        let vc = AboutViewController()
-        self.present(vc, animated: true, completion: nil)
+        self.present(secondViewController, animated: true, completion: nil)
     }
     
 }
