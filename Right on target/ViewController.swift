@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         return slider
     }()
     
-    private lazy var button: UIButton = {
+    private lazy var checkButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Проверить", for: .normal)
         button.tintColor = .systemIndigo
@@ -43,6 +43,21 @@ class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    private lazy var aboutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("О программе", for: .normal)
+        button.addTarget(self, action: #selector(showAboutScreen), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    override func loadView() {
+        super.loadView()
+        let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
+        versionLabel.text = "Версия 1.1"
+        self.view.addSubview(versionLabel)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +71,8 @@ class ViewController: UIViewController {
         
         view.addSubview(slider)
         view.addSubview(label)
-        view.addSubview(button)
+        view.addSubview(checkButton)
+        view.addSubview(aboutButton)
         setupConstraints()
     }
     
@@ -67,13 +83,16 @@ class ViewController: UIViewController {
             slider.centerYAnchor.constraint(equalTo: margins.centerYAnchor),
             slider.widthAnchor.constraint(equalTo: margins.widthAnchor, constant: 40),
             
-            button.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 18),
-            button.centerXAnchor.constraint(equalTo: slider.centerXAnchor),
-            button.heightAnchor.constraint(equalToConstant: 50),
+            checkButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 18),
+            checkButton.centerXAnchor.constraint(equalTo: slider.centerXAnchor),
+            checkButton.heightAnchor.constraint(equalToConstant: 50),
             
-            label.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 18),
+            label.topAnchor.constraint(equalTo: checkButton.bottomAnchor, constant: 18),
             label.centerXAnchor.constraint(equalTo: slider.centerXAnchor),
             label.heightAnchor.constraint(equalToConstant: 50),
+            
+            aboutButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
+            aboutButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 20)
         ])
     }
     
@@ -97,6 +116,11 @@ class ViewController: UIViewController {
             self.round += 1
         }
         self.number = Int.random(in: 1...50)
+    }
+    
+    @objc private func showAboutScreen() {
+        let vc = AboutViewController()
+        self.present(vc, animated: true, completion: nil)
     }
     
 }
