@@ -14,6 +14,7 @@
 		AB1F44BF276685D700179EB3 /* GeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F44BE276685D700179EB3 /* GeneratorProtocol.swift */; };
 		AB1F44C12766862F00179EB3 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F44C02766862F00179EB3 /* Generator.swift */; };
 		AB1F44C32766888700179EB3 /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F44C22766888700179EB3 /* GameRound.swift */; };
+		AB1F44C627679E3F00179EB3 /* GuessNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F44C527679E3F00179EB3 /* GuessNumberView.swift */; };
 		AB393C6C276375E50046C09E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6B276375E50046C09E /* AppDelegate.swift */; };
 		AB393C6E276375E50046C09E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6D276375E50046C09E /* SceneDelegate.swift */; };
 		AB393C70276375E50046C09E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6F276375E50046C09E /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		AB1F44BE276685D700179EB3 /* GeneratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorProtocol.swift; sourceTree = "<group>"; };
 		AB1F44C02766862F00179EB3 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		AB1F44C22766888700179EB3 /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
+		AB1F44C527679E3F00179EB3 /* GuessNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessNumberView.swift; sourceTree = "<group>"; };
 		AB393C68276375E50046C09E /* Right on target.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Right on target.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB393C6B276375E50046C09E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB393C6D276375E50046C09E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AB1F44C427679E1E00179EB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB1F44C527679E3F00179EB3 /* GuessNumberView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AB393C5F276375E50046C09E = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		AB393C6A276375E50046C09E /* Right on target */ = {
 			isa = PBXGroup;
 			children = (
+				AB1F44C427679E1E00179EB3 /* View */,
 				AB1F44B727665E1100179EB3 /* Model */,
 				AB393C6B276375E50046C09E /* AppDelegate.swift */,
 				AB393C6D276375E50046C09E /* SceneDelegate.swift */,
@@ -170,6 +181,7 @@
 				AB393C70276375E50046C09E /* ViewController.swift in Sources */,
 				AB1F44BB276667A500179EB3 /* Game.swift in Sources */,
 				AB1F44B92766618D00179EB3 /* GameProtocol.swift in Sources */,
+				AB1F44C627679E3F00179EB3 /* GuessNumberView.swift in Sources */,
 				AB1F44BF276685D700179EB3 /* GeneratorProtocol.swift in Sources */,
 				AB393C6C276375E50046C09E /* AppDelegate.swift in Sources */,
 				AB1F44B6276650BD00179EB3 /* AboutViewController.swift in Sources */,
