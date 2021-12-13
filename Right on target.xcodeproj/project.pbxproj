@@ -17,10 +17,11 @@
 		AB1F44C627679E3F00179EB3 /* GuessNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F44C527679E3F00179EB3 /* GuessNumberView.swift */; };
 		AB393C6C276375E50046C09E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6B276375E50046C09E /* AppDelegate.swift */; };
 		AB393C6E276375E50046C09E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6D276375E50046C09E /* SceneDelegate.swift */; };
-		AB393C70276375E50046C09E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6F276375E50046C09E /* ViewController.swift */; };
+		AB393C70276375E50046C09E /* GuessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6F276375E50046C09E /* GuessNumberViewController.swift */; };
 		AB393C73276375E50046C09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB393C71276375E50046C09E /* Main.storyboard */; };
 		AB393C75276375E80046C09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB393C74276375E80046C09E /* Assets.xcassets */; };
 		AB393C78276375E80046C09E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB393C76276375E80046C09E /* LaunchScreen.storyboard */; };
+		ABBBBB932767FB57007BE881 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB922767FB57007BE881 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +36,12 @@
 		AB393C68276375E50046C09E /* Right on target.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Right on target.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB393C6B276375E50046C09E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB393C6D276375E50046C09E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB393C6F276375E50046C09E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB393C6F276375E50046C09E /* GuessNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessNumberViewController.swift; sourceTree = "<group>"; };
 		AB393C72276375E50046C09E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB393C74276375E80046C09E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB393C77276375E80046C09E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB393C79276375E80046C09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABBBBB922767FB57007BE881 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +95,11 @@
 		AB393C6A276375E50046C09E /* Right on target */ = {
 			isa = PBXGroup;
 			children = (
+				ABBBBB912767FB27007BE881 /* Controller */,
 				AB1F44C427679E1E00179EB3 /* View */,
 				AB1F44B727665E1100179EB3 /* Model */,
 				AB393C6B276375E50046C09E /* AppDelegate.swift */,
 				AB393C6D276375E50046C09E /* SceneDelegate.swift */,
-				AB393C6F276375E50046C09E /* ViewController.swift */,
 				AB1F44B5276650BD00179EB3 /* AboutViewController.swift */,
 				AB393C71276375E50046C09E /* Main.storyboard */,
 				AB393C74276375E80046C09E /* Assets.xcassets */,
@@ -105,6 +107,15 @@
 				AB393C79276375E80046C09E /* Info.plist */,
 			);
 			path = "Right on target";
+			sourceTree = "<group>";
+		};
+		ABBBBB912767FB27007BE881 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB393C6F276375E50046C09E /* GuessNumberViewController.swift */,
+				ABBBBB922767FB57007BE881 /* MainViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +189,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB393C70276375E50046C09E /* ViewController.swift in Sources */,
+				AB393C70276375E50046C09E /* GuessNumberViewController.swift in Sources */,
 				AB1F44BB276667A500179EB3 /* Game.swift in Sources */,
 				AB1F44B92766618D00179EB3 /* GameProtocol.swift in Sources */,
+				ABBBBB932767FB57007BE881 /* MainViewController.swift in Sources */,
 				AB1F44C627679E3F00179EB3 /* GuessNumberView.swift in Sources */,
 				AB1F44BF276685D700179EB3 /* GeneratorProtocol.swift in Sources */,
 				AB393C6C276375E50046C09E /* AppDelegate.swift in Sources */,

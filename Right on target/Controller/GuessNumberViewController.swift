@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GuessNumberViewController.swift
 //  Right on target
 //
 //  Created by Margarita Novokhatskaia on 10/12/2021.
@@ -12,7 +12,7 @@ protocol GameViewControllerProtocol {
     func showAboutScreen()
 }
 
-class ViewController: UIViewController, GameViewControllerProtocol {
+class GuessNumberViewController: UIViewController, GameViewControllerProtocol {
     
     private var game: Game!
     private var gameView: GuessNumberView = GuessNumberView()

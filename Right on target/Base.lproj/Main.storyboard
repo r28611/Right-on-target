@@ -4,19 +4,59 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9XP-sb-5WW">
+                                <rect key="frame" x="76" y="32" width="788" height="329"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYd-G9-9FN">
+                                        <rect key="frame" x="0.0" y="0.0" width="257.5" height="329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Цвета">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="32"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите вариант игры" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTj-oz-wmG">
+                                        <rect key="frame" x="265.5" y="0.0" width="257" height="329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jw3-dT-7R8">
+                                        <rect key="frame" x="530.5" y="0.0" width="257.5" height="329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Числа">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="32"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="guessNumberChoosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yt9-e6-DoI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KYd-G9-9FN" firstAttribute="centerY" secondItem="9XP-sb-5WW" secondAttribute="centerY" id="Sk2-Xa-vXM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9XP-sb-5WW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="DW5-Lv-Aoa"/>
+                            <constraint firstItem="9XP-sb-5WW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Ia6-fJ-6UJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9XP-sb-5WW" secondAttribute="bottom" constant="32" id="SGM-6t-eh4"/>
+                            <constraint firstAttribute="trailing" secondItem="9XP-sb-5WW" secondAttribute="trailing" constant="32" id="zXU-cL-byx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="25A-rw-HfD"/>
                 </viewController>
