@@ -44,7 +44,7 @@ class Game<T: SecretValueProtocol>: GameProtocol {
     }
     
     func restartGame() {
-        roundCounter = 0
+        currentRound = 0
         score = 0
         startNewRound()
     }
