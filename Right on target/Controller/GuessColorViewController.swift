@@ -9,27 +9,35 @@ import UIKit
 
 class GuessColorViewController: UIViewController, GameViewControllerProtocol {
     
-    private var game: Game!
+    private var game: Game<SecretColorValue>!
     private var gameView: GuessColorView = GuessColorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gameView.viewDelegate = self
-        gameView.setColorsForButtons(rightColor: .systemYellow)
+        game = (GameFactory.getColorGame() as! Game<SecretColorValue>)
+        gameView.setColorsForButtons(rightColor: hexStringToUIColor(hex: game.secretValue.value))
         view = gameView
     }
 
     func checkAnswer() {
         if let color = gameView.choosenColor {
-            if gameView.label.text == color {
-                showAlertWith(score: 5)
+            var userSecretValue = game.secretValue
+            userSecretValue.value = color
+            game.calculateScore(secretValue: game.secretValue, userValue: userSecretValue)
+            if game.isGameEnded {
+                showAlertWith(score: game.score)
+                game.restartGame()
+            } else {
+                game.startNewRound()
             }
+            gameView.setColorsForButtons(rightColor: hexStringToUIColor(hex: game.secretValue.value))
         }
     }
     
     private func showAlertWith(score: Int) {
         let alert = UIAlertController(
-            title: "Вы угадали",
+            title: "Игра окончена",
             message: "Вы заработали \(score) очков",
             preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Начать заново",

@@ -9,29 +9,30 @@ import UIKit
 
 class GuessNumberViewController: UIViewController, GameViewControllerProtocol {
     
-    private var game: Game!
+    private var game: Game<SecretNumericValue>!
     private var gameView: GuessNumberView = GuessNumberView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view = gameView
         gameView.viewDelegate = self
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
-        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue!))
+        game = (GameFactory.getNumericGame() as! Game<SecretNumericValue>)
+        updateLabelWithSecretNumber(newText: String(game.secretValue.value))
     }
     
     // MARK: - Взаимодействие View - Model
     
     func checkAnswer() {
-        let numSlider = Int(gameView.slider.value.rounded())
-        game.calculateScore(with: numSlider)
+        var userSecretValue = game.secretValue
+        userSecretValue.value = Int(gameView.slider.value)
+        game.calculateScore(secretValue: game.secretValue, userValue: userSecretValue)
         if game.isGameEnded {
             showAlertWith(score: game.score)
             game.restartGame()
         } else {
             game.startNewRound()
         }
-        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue!))
+        updateLabelWithSecretNumber(newText: String(game.secretValue.value))
     }
     
     // MARK: - Обновление View
