@@ -13,7 +13,7 @@ class GuessColorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        gameView.setColorsForButtons(rightColor: .systemYellow)
         view = gameView
     }
 

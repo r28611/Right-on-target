@@ -9,19 +9,16 @@ import UIKit
 
 class GuessColorView: UIView {
     
+    var rightColor: UIColor?
+    
     lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "#ffffff"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var buttonStackview: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [createButton(with: "Вариант 1", color: .systemGreen),
-                                                   createButton(with: "Вариант 2", color: .systemBlue),
-                                                   createButton(with: "Вариант 3", color: .systemYellow),
-                                                   createButton(with: "Вариант 4", color: .systemPink)
-                                                  ])
+        let stack = UIStackView(arrangedSubviews: createButtons(rightColor: rightColor ?? .white))
         stack.axis = .horizontal
         stack.distribution = .fillEqually
         stack.spacing = 20
@@ -40,8 +37,24 @@ class GuessColorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setColorsForButtons(rightColor color: UIColor) {
+        var colorSet: Set<UIColor> = [color]
+        while colorSet.count < 4 {
+            colorSet.update(with: .random())
+        }
+        let colorArray = Array(colorSet)
+        for (index, button) in buttonStackview.arrangedSubviews.enumerated() {
+            button.backgroundColor = colorArray[index]
+        }
+        
+        label.text = hexStringFromColor(color: color)
+        
+    }
+    
+    // MARK: - Private methods
+    
     private func setupUi() {
-        backgroundColor = .random()
+        backgroundColor = UIColor(red: 120.0/255.0, green: 196.0/255.0, blue: 237.0/255.0, alpha: 1.0)
         addSubview(label)
         addSubview(buttonStackview)
         setupConstraints()
@@ -58,11 +71,18 @@ class GuessColorView: UIView {
             buttonStackview.centerYAnchor.constraint(equalTo: margins.centerYAnchor)
         ])
     }
+    
+    private func createButtons(rightColor color: UIColor) -> [UIButton] {
+        var buttons = [UIButton]()
+        for button in 1...4 {
+            buttons.append(createButton(with: "Вариант \(button)"))
+        }
+        return buttons
+    }
 
-    private func createButton(with text: String, color: UIColor) -> UIButton {
+    private func createButton(with text: String) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle(text, for: .normal)
-        button.backgroundColor = color
         button.tintColor = .black
         button.addTarget(self, action: #selector(check), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
