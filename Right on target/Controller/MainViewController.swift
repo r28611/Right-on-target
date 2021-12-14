@@ -8,7 +8,16 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    private lazy var secondViewController: UIViewController = AboutViewController()
 
+    override func loadView() {
+        super.loadView()
+        let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
+        versionLabel.text = "Версия 1.3"
+        self.view.addSubview(versionLabel)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,5 +31,9 @@ class MainViewController: UIViewController {
     @IBAction func guessColorChoosen(_ sender: Any) {
         let vc = GuessColorViewController()
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func showAboutScreen(_ sender: Any) {
+        self.present(secondViewController, animated: true, completion: nil)
     }
 }

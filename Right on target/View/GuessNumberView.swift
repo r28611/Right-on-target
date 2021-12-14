@@ -42,14 +42,6 @@ class GuessNumberView: UIView {
         return button
     }()
     
-    private lazy var aboutButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("О программе", for: .normal)
-        button.addTarget(self, action: #selector(showAboutScreen), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     // MARK: - Initializers
     
     override init(frame: CGRect) {
@@ -66,7 +58,6 @@ class GuessNumberView: UIView {
         addSubview(slider)
         addSubview(label)
         addSubview(checkButton)
-        addSubview(aboutButton)
         setupConstraints()
     }
     
@@ -83,18 +74,12 @@ class GuessNumberView: UIView {
             
             label.topAnchor.constraint(equalTo: checkButton.bottomAnchor, constant: 18),
             label.centerXAnchor.constraint(equalTo: slider.centerXAnchor),
-            label.heightAnchor.constraint(equalToConstant: 50),
-            
-            aboutButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
-            aboutButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 20)
+            label.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 
     @objc private func check() {
         self.viewDelegate?.checkAnswer()
     }
-    
-    @objc private func showAboutScreen() {
-        self.viewDelegate?.showAboutScreen()
-    }
+
 }

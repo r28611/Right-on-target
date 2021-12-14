@@ -9,23 +9,12 @@ import UIKit
 
 protocol GameViewControllerProtocol {
     func checkAnswer()
-    func showAboutScreen()
 }
 
 class GuessNumberViewController: UIViewController, GameViewControllerProtocol {
     
     private var game: Game!
     private var gameView: GuessNumberView = GuessNumberView()
-    private lazy var secondViewController: UIViewController = AboutViewController()
-    
-    // MARK: - Жизненный цикл
-    
-    override func loadView() {
-        super.loadView()
-        let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
-        versionLabel.text = "Версия 1.1"
-        self.view.addSubview(versionLabel)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +36,6 @@ class GuessNumberViewController: UIViewController, GameViewControllerProtocol {
             game.startNewRound()
         }
         updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue!))
-    }
-    
-    func showAboutScreen() {
-        self.present(secondViewController, animated: true, completion: nil)
     }
     
     // MARK: - Обновление View
