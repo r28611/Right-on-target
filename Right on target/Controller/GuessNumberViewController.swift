@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol GameViewControllerProtocol {
-    func checkAnswer()
-}
-
 class GuessNumberViewController: UIViewController, GameViewControllerProtocol {
     
     private var game: Game!

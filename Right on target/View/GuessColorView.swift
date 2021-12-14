@@ -9,7 +9,8 @@ import UIKit
 
 class GuessColorView: UIView {
     
-    var rightColor: UIColor?
+    var viewDelegate: GameViewControllerProtocol?
+    var choosenColor: String?
     
     lazy var label: UILabel = {
         let label = UILabel()
@@ -18,7 +19,7 @@ class GuessColorView: UIView {
     }()
     
     private lazy var buttonStackview: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: createButtons(rightColor: rightColor ?? .white))
+        let stack = UIStackView(arrangedSubviews: createButtons())
         stack.axis = .horizontal
         stack.distribution = .fillEqually
         stack.spacing = 20
@@ -72,7 +73,7 @@ class GuessColorView: UIView {
         ])
     }
     
-    private func createButtons(rightColor color: UIColor) -> [UIButton] {
+    private func createButtons() -> [UIButton] {
         var buttons = [UIButton]()
         for button in 1...4 {
             buttons.append(createButton(with: "Вариант \(button)"))
@@ -84,13 +85,14 @@ class GuessColorView: UIView {
         let button = UIButton(type: .system)
         button.setTitle(text, for: .normal)
         button.tintColor = .black
-        button.addTarget(self, action: #selector(check), for: .touchUpInside)
+        button.addTarget(self, action: #selector(check(_:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
     
-    @objc private func check() {
-        
+    @objc private func check(_ sender: UIButton) {
+        choosenColor = hexStringFromColor(color: sender.backgroundColor!)
+        viewDelegate?.checkAnswer()
     }
     
     private func hexStringFromColor(color: UIColor) -> String {

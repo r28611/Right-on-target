@@ -25,6 +25,7 @@
 		ABBBBB952767FFAC007BE881 /* GuessColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB942767FFAC007BE881 /* GuessColorView.swift */; };
 		ABBBBB9727680402007BE881 /* GuessColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB9627680402007BE881 /* GuessColorViewController.swift */; };
 		ABBBBB992768C98F007BE881 /* + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB982768C98F007BE881 /* + UIColor.swift */; };
+		ABBBBB9B27691E24007BE881 /* GameViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB9A27691E24007BE881 /* GameViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		ABBBBB942767FFAC007BE881 /* GuessColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessColorView.swift; sourceTree = "<group>"; };
 		ABBBBB9627680402007BE881 /* GuessColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessColorViewController.swift; sourceTree = "<group>"; };
 		ABBBBB982768C98F007BE881 /* + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "+ UIColor.swift"; path = "Right on target/+ UIColor.swift"; sourceTree = SOURCE_ROOT; };
+		ABBBBB9A27691E24007BE881 /* GameViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControllerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				AB1F44C22766888700179EB3 /* GameRound.swift */,
 				AB1F44BE276685D700179EB3 /* GeneratorProtocol.swift */,
 				AB1F44C02766862F00179EB3 /* Generator.swift */,
+				ABBBBB9A27691E24007BE881 /* GameViewControllerProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				ABBBBB9727680402007BE881 /* GuessColorViewController.swift in Sources */,
 				AB1F44C12766862F00179EB3 /* Generator.swift in Sources */,
 				AB1F44BD2766845E00179EB3 /* GameRoundProtocol.swift in Sources */,
+				ABBBBB9B27691E24007BE881 /* GameViewControllerProtocol.swift in Sources */,
 				AB1F44C32766888700179EB3 /* GameRound.swift in Sources */,
 				AB393C6E276375E50046C09E /* SceneDelegate.swift in Sources */,
 				ABBBBB952767FFAC007BE881 /* GuessColorView.swift in Sources */,
