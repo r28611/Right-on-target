@@ -24,6 +24,7 @@
 		ABBBBB932767FB57007BE881 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB922767FB57007BE881 /* MainViewController.swift */; };
 		ABBBBB952767FFAC007BE881 /* GuessColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB942767FFAC007BE881 /* GuessColorView.swift */; };
 		ABBBBB9727680402007BE881 /* GuessColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB9627680402007BE881 /* GuessColorViewController.swift */; };
+		ABBBBB992768C98F007BE881 /* + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB982768C98F007BE881 /* + UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		ABBBBB922767FB57007BE881 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ABBBBB942767FFAC007BE881 /* GuessColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessColorView.swift; sourceTree = "<group>"; };
 		ABBBBB9627680402007BE881 /* GuessColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessColorViewController.swift; sourceTree = "<group>"; };
+		ABBBBB982768C98F007BE881 /* + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "+ UIColor.swift"; path = "Right on target/+ UIColor.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				AB1F44C427679E1E00179EB3 /* View */,
 				AB1F44B727665E1100179EB3 /* Model */,
 				AB393C6B276375E50046C09E /* AppDelegate.swift */,
+				ABBBBB982768C98F007BE881 /* + UIColor.swift */,
 				AB393C6D276375E50046C09E /* SceneDelegate.swift */,
 				AB1F44B5276650BD00179EB3 /* AboutViewController.swift */,
 				AB393C71276375E50046C09E /* Main.storyboard */,
@@ -202,6 +205,7 @@
 				AB1F44C627679E3F00179EB3 /* GuessNumberView.swift in Sources */,
 				AB1F44BF276685D700179EB3 /* GeneratorProtocol.swift in Sources */,
 				AB393C6C276375E50046C09E /* AppDelegate.swift in Sources */,
+				ABBBBB992768C98F007BE881 /* + UIColor.swift in Sources */,
 				AB1F44B6276650BD00179EB3 /* AboutViewController.swift in Sources */,
 				ABBBBB9727680402007BE881 /* GuessColorViewController.swift in Sources */,
 				AB1F44C12766862F00179EB3 /* Generator.swift in Sources */,
