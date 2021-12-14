@@ -7,38 +7,54 @@
 
 import Foundation
 
-class Game: GameProtocol {
+protocol GameProtocol {
     
-    var secretValueGenerator: GeneratorProtocol
+    associatedtype SecretType
+
+    var score: Int { get }
     
-    var currentRound: GameRoundProtocol!
+    var secretValue: SecretType { get }
+
+    var isGameEnded: Bool { get }
+
+    func restartGame()
+
+    func startNewRound()
+
+    func calculateScore(secretValue: SecretType, userValue: SecretType)
+}
+
+class Game<T: SecretValueProtocol>: GameProtocol {
+    typealias SecretType = T
     
     var score: Int = 0
-    var roundCouner: Int = 0
-    var maxRound: Int
+    var secretValue: T
+    var currentRound: Int = 0
+    private var compareClosure: (T, T) -> Int
+    var roundCounter: Int!
     var isGameEnded: Bool {
-        roundCouner >= maxRound ? true : false
+        currentRound >= roundCounter ? true : false
     }
     
-    init?(startValue: Int, endValue: Int, rounds: Int) {
-        secretValueGenerator = Generator(startValue: startValue, endValue: endValue)!
-        maxRound = rounds
+    init(secretValue: T, rounds: Int, compareClosure: @escaping (T, T) -> Int) {
+        self.secretValue = secretValue
+        roundCounter = rounds
+        self.compareClosure = compareClosure
         startNewRound()
     }
     
     func restartGame() {
-        roundCouner = 0
+        currentRound = 0
         score = 0
         startNewRound()
     }
     
     func startNewRound() {
-        roundCouner += 1
-        currentRound = GameRound(with: secretValueGenerator.getRandomValue())
+        currentRound += 1
+        self.secretValue.setRandomValue()
     }
     
-    func calculateScore(with value: Int) {
-        currentRound.calculateScore(with: value)
-        score += currentRound.score
+    func calculateScore(secretValue: T, userValue: T) {
+        score = score + compareClosure(secretValue, userValue)
     }
 }
