@@ -19,4 +19,8 @@ class MainViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func guessColorChoosen(_ sender: Any) {
+        let vc = GuessColorViewController()
+        self.present(vc, animated: true, completion: nil)
+    }
 }

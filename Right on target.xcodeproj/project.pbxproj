@@ -22,6 +22,8 @@
 		AB393C75276375E80046C09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB393C74276375E80046C09E /* Assets.xcassets */; };
 		AB393C78276375E80046C09E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB393C76276375E80046C09E /* LaunchScreen.storyboard */; };
 		ABBBBB932767FB57007BE881 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB922767FB57007BE881 /* MainViewController.swift */; };
+		ABBBBB952767FFAC007BE881 /* GuessColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB942767FFAC007BE881 /* GuessColorView.swift */; };
+		ABBBBB9727680402007BE881 /* GuessColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB9627680402007BE881 /* GuessColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		AB393C77276375E80046C09E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB393C79276375E80046C09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABBBBB922767FB57007BE881 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ABBBBB942767FFAC007BE881 /* GuessColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessColorView.swift; sourceTree = "<group>"; };
+		ABBBBB9627680402007BE881 /* GuessColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				AB1F44C527679E3F00179EB3 /* GuessNumberView.swift */,
+				ABBBBB942767FFAC007BE881 /* GuessColorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			children = (
 				AB393C6F276375E50046C09E /* GuessNumberViewController.swift */,
 				ABBBBB922767FB57007BE881 /* MainViewController.swift */,
+				ABBBBB9627680402007BE881 /* GuessColorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,10 +203,12 @@
 				AB1F44BF276685D700179EB3 /* GeneratorProtocol.swift in Sources */,
 				AB393C6C276375E50046C09E /* AppDelegate.swift in Sources */,
 				AB1F44B6276650BD00179EB3 /* AboutViewController.swift in Sources */,
+				ABBBBB9727680402007BE881 /* GuessColorViewController.swift in Sources */,
 				AB1F44C12766862F00179EB3 /* Generator.swift in Sources */,
 				AB1F44BD2766845E00179EB3 /* GameRoundProtocol.swift in Sources */,
 				AB1F44C32766888700179EB3 /* GameRound.swift in Sources */,
 				AB393C6E276375E50046C09E /* SceneDelegate.swift in Sources */,
+				ABBBBB952767FFAC007BE881 /* GuessColorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
