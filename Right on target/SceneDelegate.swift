@@ -18,10 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(windowScene: windowScene)
         guard let window = window else { return }
-
-        window.windowScene = windowScene
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
