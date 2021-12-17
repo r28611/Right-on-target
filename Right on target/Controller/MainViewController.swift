@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     override func loadView() {
         super.loadView()
         let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
-        versionLabel.text = "Версия 1.3"
+        versionLabel.text = "Версия 1.4"
         self.view.addSubview(versionLabel)
     }
     
