@@ -7,33 +7,34 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-    
-    private lazy var secondViewController: UIViewController = AboutViewController()
+protocol MainViewControllerProtocol {
+    func guessNumberChoosen()
+    func guessColorChoosen()
+    func showAboutScreen()
+}
 
-    override func loadView() {
-        super.loadView()
-        let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
-        versionLabel.text = "Версия 1.4"
-        self.view.addSubview(versionLabel)
-    }
+class MainViewController: UIViewController, MainViewControllerProtocol {
+    
+    private var mainView = MainMenuView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view = mainView
+        mainView.viewDelegate = self
     }
     
-    @IBAction func guessNumberChoosen(_ sender: Any) {
+    func guessNumberChoosen() {
         let vc = GuessNumberViewController()
         self.present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func guessColorChoosen(_ sender: Any) {
+    func guessColorChoosen() {
         let vc = GuessColorViewController()
         self.present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func showAboutScreen(_ sender: Any) {
-        self.present(secondViewController, animated: true, completion: nil)
+    func showAboutScreen() {
+        let vc = AboutViewController()
+        self.present(vc, animated: true, completion: nil)
     }
 }
