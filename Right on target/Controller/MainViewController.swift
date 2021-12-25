@@ -25,16 +25,16 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
     
     func guessNumberChoosen() {
         let vc = GuessNumberViewController()
-        self.present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func guessColorChoosen() {
         let vc = GuessColorViewController()
-        self.present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func showAboutScreen() {
         let vc = AboutViewController()
-        self.present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
