@@ -14,9 +14,9 @@
 		AB393C6C276375E50046C09E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6B276375E50046C09E /* AppDelegate.swift */; };
 		AB393C6E276375E50046C09E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6D276375E50046C09E /* SceneDelegate.swift */; };
 		AB393C70276375E50046C09E /* GuessNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB393C6F276375E50046C09E /* GuessNumberViewController.swift */; };
-		AB393C73276375E50046C09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB393C71276375E50046C09E /* Main.storyboard */; };
 		AB393C75276375E80046C09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB393C74276375E80046C09E /* Assets.xcassets */; };
 		AB393C78276375E80046C09E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB393C76276375E80046C09E /* LaunchScreen.storyboard */; };
+		AB8E66232777C6A6000200E9 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8E66222777C6A6000200E9 /* MainMenuView.swift */; };
 		ABBBBB932767FB57007BE881 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB922767FB57007BE881 /* MainViewController.swift */; };
 		ABBBBB952767FFAC007BE881 /* GuessColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB942767FFAC007BE881 /* GuessColorView.swift */; };
 		ABBBBB9727680402007BE881 /* GuessColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBBB9627680402007BE881 /* GuessColorViewController.swift */; };
@@ -34,10 +34,10 @@
 		AB393C6B276375E50046C09E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB393C6D276375E50046C09E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB393C6F276375E50046C09E /* GuessNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessNumberViewController.swift; sourceTree = "<group>"; };
-		AB393C72276375E50046C09E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB393C74276375E80046C09E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB393C77276375E80046C09E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB393C79276375E80046C09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB8E66222777C6A6000200E9 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		ABBBBB922767FB57007BE881 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ABBBBB942767FFAC007BE881 /* GuessColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessColorView.swift; sourceTree = "<group>"; };
 		ABBBBB9627680402007BE881 /* GuessColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessColorViewController.swift; sourceTree = "<group>"; };
@@ -70,8 +70,10 @@
 		AB1F44C427679E1E00179EB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB393C76276375E80046C09E /* LaunchScreen.storyboard */,
 				AB1F44C527679E3F00179EB3 /* GuessNumberView.swift */,
 				ABBBBB942767FFAC007BE881 /* GuessColorView.swift */,
+				AB8E66222777C6A6000200E9 /* MainMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,17 +97,14 @@
 		AB393C6A276375E50046C09E /* Right on target */ = {
 			isa = PBXGroup;
 			children = (
+				AB393C6B276375E50046C09E /* AppDelegate.swift */,
+				AB393C6D276375E50046C09E /* SceneDelegate.swift */,
+				AB393C79276375E80046C09E /* Info.plist */,
 				ABBBBB912767FB27007BE881 /* Controller */,
 				AB1F44C427679E1E00179EB3 /* View */,
 				AB1F44B727665E1100179EB3 /* Model */,
-				AB393C6B276375E50046C09E /* AppDelegate.swift */,
 				ABBBBB982768C98F007BE881 /* + UIColor.swift */,
-				AB393C6D276375E50046C09E /* SceneDelegate.swift */,
-				AB1F44B5276650BD00179EB3 /* AboutViewController.swift */,
-				AB393C71276375E50046C09E /* Main.storyboard */,
 				AB393C74276375E80046C09E /* Assets.xcassets */,
-				AB393C76276375E80046C09E /* LaunchScreen.storyboard */,
-				AB393C79276375E80046C09E /* Info.plist */,
 			);
 			path = "Right on target";
 			sourceTree = "<group>";
@@ -113,6 +112,7 @@
 		ABBBBB912767FB27007BE881 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB1F44B5276650BD00179EB3 /* AboutViewController.swift */,
 				ABBBBB9A27691E24007BE881 /* GameViewControllerProtocol.swift */,
 				AB393C6F276375E50046C09E /* GuessNumberViewController.swift */,
 				ABBBBB922767FB57007BE881 /* MainViewController.swift */,
@@ -181,7 +181,6 @@
 			files = (
 				AB393C78276375E80046C09E /* LaunchScreen.storyboard in Resources */,
 				AB393C75276375E80046C09E /* Assets.xcassets in Resources */,
-				AB393C73276375E50046C09E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +199,7 @@
 				ABBBBB992768C98F007BE881 /* + UIColor.swift in Sources */,
 				AB1686A0276944430052AA9D /* GameFactory.swift in Sources */,
 				AB1F44B6276650BD00179EB3 /* AboutViewController.swift in Sources */,
+				AB8E66232777C6A6000200E9 /* MainMenuView.swift in Sources */,
 				ABBBBB9727680402007BE881 /* GuessColorViewController.swift in Sources */,
 				ABBBBB9D27693F8E007BE881 /* SecretValue.swift in Sources */,
 				ABBBBB9B27691E24007BE881 /* GameViewControllerProtocol.swift in Sources */,
@@ -211,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB393C71276375E50046C09E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB393C72276375E50046C09E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AB393C76276375E80046C09E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -358,7 +350,6 @@
 				INFOPLIST_FILE = "Right on target/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -387,7 +378,6 @@
 				INFOPLIST_FILE = "Right on target/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

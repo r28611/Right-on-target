@@ -21,10 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         guard let window = window else { return }
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-
-        window.rootViewController = viewController
+        let viewController = MainViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
 
         window.makeKeyAndVisible()
         print("willConnectTo")
