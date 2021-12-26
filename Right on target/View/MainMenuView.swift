@@ -11,7 +11,7 @@ class MainMenuView: UIView {
     
     var viewDelegate: MainViewControllerProtocol?
 
-    lazy var label: UILabel = {
+      private lazy var label: UILabel = {
         let label = UILabel()
         label.text = "Выберите вариант игры"
         label.numberOfLines = 0
@@ -21,11 +21,19 @@ class MainMenuView: UIView {
         return label
     }()
     
-    lazy var versionLabel: UILabel = {
+    private lazy var versionLabel: UILabel = {
         let label = UILabel()
         label.text = "Версия 1.4"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private lazy var aboutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Об игре", for: .normal)
+        button.addTarget(self, action: #selector(aboutGameSelected), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     private lazy var colorGameButton: UIButton = {
@@ -70,6 +78,7 @@ class MainMenuView: UIView {
         backgroundColor = .white
         addSubview(stackView)
         addSubview(versionLabel)
+        addSubview(aboutButton)
         let margins = layoutMarginsGuide
         NSLayoutConstraint.activate([
             versionLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 16),
@@ -78,7 +87,10 @@ class MainMenuView: UIView {
             stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: margins.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
+            
+            aboutButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 16),
+            aboutButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 16)
         ])
     }
 
@@ -88,5 +100,9 @@ class MainMenuView: UIView {
     
     @objc private func numberGameSelected() {
         viewDelegate?.guessNumberChoosen()
+    }
+    
+    @objc private func aboutGameSelected() {
+        viewDelegate?.showAboutScreen()
     }
 }

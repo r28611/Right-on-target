@@ -21,6 +21,9 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
         super.viewDidLoad()
         view = mainView
         mainView.viewDelegate = self
+        navigationItem.title = "Main Menu"
+        navigationItem.backButtonTitle = navigationItem.title
+        navigationItem.largeTitleDisplayMode = .always
     }
     
     func guessNumberChoosen() {
