@@ -23,6 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let viewController = MainViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.backgroundColor = .random().withAlphaComponent(0.5)
         window.rootViewController = navigationController
 
         window.makeKeyAndVisible()
